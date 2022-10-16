@@ -27,7 +27,7 @@ try:
 except mysql.connector.Error as e:
     print(f"Failed to create database {DB_NAME} - assuming it already exists. Error was: {e}\n")
 
-cursor.execute("use test_db")
+cursor.execute(f"use {DB_NAME}")
 cursor.execute('''
        create table if not exists users (
          id serial primary key,
