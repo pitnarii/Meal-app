@@ -2,6 +2,9 @@
   "name": "react-portfolio",
   "version": "0.1.0",
   "private": true,
+  "optionalDependencies": {
+    "fsevents": "^2.3.2"
+  },
   "dependencies": {
     "2": "^3.0.0",
     "@fortawesome/fontawesome-svg-core": "^6.1.2",
