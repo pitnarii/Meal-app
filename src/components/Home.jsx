@@ -1,35 +1,38 @@
 
-
+import frugalogo from '../assets/frugalogo.png';
+import LandingPage from '../assets/LandingPage.jpg';
 import React from 'react';
 import { HiArrowNarrowRight } from 'react-icons/hi';
 import {Link} from 'react-scroll'
 
-
+ 
 
 
 const Home = () => {
   return (
-    <div name='home' className='w-half h-screen bg-[#22333B] '>
+    <div style={{ backgroundImage:`url(${LandingPage})`,backgroundRepeat:"no-repeat",backgroundSize:"100%"}} name='home' className='w-half h-screen bg-white'>
 
       {/* Container */}
-      <div className='max-w-[1000px] mx-auto px-8 flex flex-col justify-center h-full'>
-        <h1 className='text-4xl sm:text-7xl font-bold text-[#ffffff]'>
-         First title homepage, hello!
-        </h1>
-        <h2 className='text-4xl sm:text-7xl font-bold text-[#84C318]'>
-          Second title homepage
+      <div  className='max-w-[1000px] mx-auto px-8 flex flex-col justify-center h-full'>
+      <div className='max-w-[1000px] ml-60 px-8 flex justify-center flex-col h-full'>
+      <img src={frugalogo} alt="app__logo" height='216px' width='163px' />
+      </div>
+
+      <div className='max-w-[1000px] ml-40 px-9 flex justify-center flex-col h-full'>
+        <h2 className='text-3xl font-barlow font-normal text-[#864540]'>
+        The planner that turns < br/> you into a FrugalChef - < br/>create a meal that's yummy < br/>without worrying  about money!
         </h2>
-        <p className='text-[#8892b0] py-4 max-w-[700px]'>
-          "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+        <p className=' text-lg text-[#864540] py-14 max-w-[700px]'>
+        Choose delicious recipes to suit all tastes and FrugalChef will < br/>tell you the their cost!
         </p>
+        </div>
+       
 
         
-        <div className='max-w-[1000px] grid sm:grid-cols-2'>
-          <div className='max-w-[1000px] w-full grid grid-cols-2 '>
+        <div className='max-w-[1000px] grid md:grid-cols-2'>
+          <div className='max-w-[1000px] py-4 scale-110 flex flex-col h-full'>
           <Link to="Blog" smooth={true} duration={500}>
-            <button className='text-white group border-2 px-6 py-3 flex items-center hover:bg-green-600 hover:border-green-600'>
-             Search Recipes 
-            </button>
+          <button class="bg-[#E07A72] hover:bg-orange-500 text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline">Contact Us</button>
           </Link>
           </div>
 
