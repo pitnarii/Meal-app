@@ -10,9 +10,7 @@ import {Link} from 'react-scroll'
 
 const Home = () => {
   return (
-  
     <div style={{ backgroundImage:`url(${LandingPage})`,backgroundRepeat:"no-repeat",backgroundSize:"100%"}} name='home' className='w-half h-screen bg-white'>
-
 
       {/* Container */}
       <div  className='max-w-[1000px] mx-auto px-8 flex flex-col justify-center h-full'>

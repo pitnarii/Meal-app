@@ -1,6 +1,4 @@
 import React from 'react';
-import Veggie from './Veggie';
-import Popular from './Popular';
 
 import Meal1 from '../assets/meal1.jpeg';
 import Meal2 from '../assets/meal2.jpeg';
@@ -18,8 +16,7 @@ const Recipes = () => {
           <p className='py-6'> Text about recipes </p>
           <p className='py-1'> (this needs to render in seperate tab not on homepage) </p>
         </div>
-        <Veggie />
-        <Popular /> 
+
 {/* Container */}
         <div className='grid sm:grid-cols-2 md:grid-cols-3 gap-4'>
 
