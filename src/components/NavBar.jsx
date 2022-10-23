@@ -21,6 +21,8 @@ const NavBar = () => {
 
 <img src={FrugalChefResized} alt="app__logo" height='105px' width='281px' />
 
+        
+  Logo here Nicole
 
 
       {/* menu */}

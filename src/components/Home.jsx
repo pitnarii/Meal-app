@@ -10,6 +10,7 @@ import {Link} from 'react-scroll'
 
 const Home = () => {
   return (
+
     <div style={{ backgroundImage:`url(${LandingPage})`,backgroundRepeat:"no-repeat",backgroundSize:"100%"}} name='home' className='w-half h-screen bg-white'>
 
       {/* Container */}
@@ -21,7 +22,8 @@ const Home = () => {
       <div className='max-w-[1000px] ml-40 px-9 flex justify-center flex-col h-full'>
         <h2 className='text-3xl font-barlow font-normal text-[#864540]'>
         The planner that turns < br/> you into a FrugalChef - < br/>create a meal that's yummy < br/>without worrying  about money!
-        </h2>
+       
+       </h2>
         <p className=' text-lg text-[#864540] py-14 max-w-[700px]'>
         Choose delicious recipes to suit all tastes and FrugalChef will < br/>tell you the their cost!
         </p>
