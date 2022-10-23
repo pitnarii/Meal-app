@@ -20,6 +20,8 @@ const NavBar = () => {
 
 
 
+        
+  Logo here Nicole
 
 
       {/* menu */}
