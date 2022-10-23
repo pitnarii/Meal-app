@@ -9,9 +9,10 @@ import {Link} from 'react-scroll'
 
 const Home = () => {
   return (
-    <div name='home' className='w-half h-screen bg-[#22333B] '>
 
-      {/* Container */}
+    <div style={{ backgroundImage:`url(${LandingPage})`,backgroundRepeat:"no-repeat",backgroundSize:"100%"}} name='home' className='w-half h-screen bg-white'>
+    
+    {/* Container */}
       <div className='max-w-[1000px] mx-auto px-8 flex flex-col justify-center h-full'>
         <h1 className='text-4xl sm:text-7xl font-bold text-[#ffffff]'>
          First title homepage, hello!
