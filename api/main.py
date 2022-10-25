@@ -1,5 +1,5 @@
 
-from flask import Flask, request, session
+from flask import Flask, request, session, redirect, url_for
 from flask_cors import CORS
 from sql_cnx import *
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -63,7 +63,7 @@ def login():
                     'email': session['email'],
                     'name': user_name
                 }
-                # redirect to dashboard?
+                # redirect(url_for('dashboard'))
             else:
                 return {
                 'loggedIn': False,
@@ -79,10 +79,10 @@ def login():
     else:
         if 'email' in session:
             pass
-            #return redirect to dashboard?
+             # redirect(url_for('dashboard'))
         else:
             pass
-            # return redirect to login page?
+             # redirect(url_for('login'))
 
 
 # app route to user dashboard
@@ -91,9 +91,9 @@ def dashboard():
     if 'email' in session:
         return "Welcome to your dashboard"
     else:
-        return "You need to login"
-        # redirect to login page?
-        # alert to inform that login needed?
+        return "You need to login"      # use alert?
+        # redirect(url_for('login'))
+       
 
 
 # app route to search recipe
@@ -118,9 +118,9 @@ def get_recipe_details(recipe_id):
         result = get_recipe_info_api(recipe_id)
         return result
     else:
-        return "You need to login"
-        # redirect to login page?
-        # alert to inform that login needed?
+        return "You need to login"      # use alert?
+        # redirect(url_for('login'))
+        
     
 
 
@@ -132,9 +132,22 @@ def save_recipe(recipe_id):
         result = save_recipes_db(email, recipe_id)
         return result
     else:
-        return "You need to login"
-        # redirect to login page?
-        # alert to inform that login needed?
+        return "You need to login"      # use alert?
+        # redirect(url_for('login'))
+       
+
+
+# app route for deleting recipe (only for logged in users)
+@app.route('/user/delete_recipe/<recipe_id>')
+def delete_recipe(recipe_id):
+    if 'email' in session:
+        email = session['email']
+        result = delete_recipes_db(email, recipe_id)
+        return result
+    else:
+        return "You need to login"      # use alert?
+        # redirect(url_for('login'))
+       
 
 
 
@@ -144,10 +157,10 @@ def sign_out():
     if 'email' in session:
         session.pop('email', None)
         return {'success': True}
-        # redirect to login page?
+        # redirect(url_for('login'))
     else:
         return "You are not logged in"
-
+        # redirect(url_for('login'))
 
 app.run(port=3300, debug=True)
 

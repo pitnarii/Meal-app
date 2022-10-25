@@ -86,7 +86,7 @@ def get_login_user_db(email):
 def save_recipes_db(user_email, recipe_id):
     use_db()
     query = """
-    INSERT INTO saved_recipes (user_email, recipe_ids) VALUES ('{}','[{}]')
+    INSERT INTO saved_recipes (user_email, recipe_ids) VALUES ('{}','{}')
     ON DUPLICATE KEY 
     UPDATE recipe_ids = JSON_ARRAY_APPEND(recipe_ids,'$', '{}')
     """.format(user_email, recipe_id, recipe_id)
@@ -97,6 +97,24 @@ def save_recipes_db(user_email, recipe_id):
     except Exception as err:
         return {'success': False, 
         "Error message":f"Recipe not saved, error: {err}" }
+
+
+def delete_recipes_db(user_email, recipe_id):
+    use_db()
+    query = """
+    UPDATE saved_recipes
+    SET recipe_ids = JSON_REMOVE(
+    recipe_ids, replace(JSON_SEARCH(recipe_ids, 'all', '{}'), '"', ''))
+    WHERE user_email = '{}'
+    AND JSON_SEARCH(recipe_ids, 'all', '{}') IS NOT NULL""".format(recipe_id, user_email, recipe_id)
+
+    try:
+        cursor.execute(query)
+        cnx.commit()
+        return {'success': True}    
+    except Exception as err:
+        return {'success': False, 
+        "Error message":f"Recipe not deleted, error: {err}" }
 
 
 
