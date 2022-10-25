@@ -1,5 +1,7 @@
+import registrationresized1 from '../assets/registrationresized1.png';
 import React, { useState } from "react";
 import { useEffect } from "react";
+
 
 const RegistrationForm = ({ checkIfLoggedIn }) => {
   const [email, setEmail] = useState("");
@@ -56,62 +58,71 @@ const RegistrationForm = ({ checkIfLoggedIn }) => {
   }, [result]);
 
   return (
-    <form
-      action="/register"
-      method="post"
-      className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
-    >
-      <label>E-mail: </label>
-      <input
-        disabled={loading}
-        value={email}
-        onChange={handleEmailChange}
-        type="email"
-        required
-        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-      />
-      <label>Name: </label>
-      <input
-        disabled={loading}
-        value={name}
-        onChange={handleNameChange}
-        type="text"
-        required
-        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-      />
-      <label>Password: </label>
-      <input
-        disabled={loading}
-        value={password}
-        onChange={handlePasswordChange}
-        type="password"
-        required
-        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-      />
-      <button
-        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-        onClick={handleRegister}
-        disabled={loading}
-      >
-        Register
-      </button>
-    </form>
-  );
-};
+
+      <div class="relative flex flex-col justify-center min-h-screen overflow-hidden">
+            <div
+                class="w-full p-6 m-auto bg-white rounded-md shadow-md border-top lg:max-w-md">
+                <h4 class="text-2xl text-center underline text-amber-900">Create Account</h4>
+                <form class="mt-6">
+                    <div class="relative">
+                        <input d="name" name="name" type="text" disabled={loading} value={name}  onChange={handleNameChange}
+                         class="w-full h-10 text-gray-900 placeholder-transparent rounded border-b-2 border-gray-300 peer focus:outline-none focus:border-orange-500"
+                         placeholder="Username" />
+                         <label for="name"
+                           class="absolute left-0 -top-3.5 text-gray-600 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">&nbsp;&nbsp;Username
+                          </label>
+                    </div>
+                    <br/>
+                    <div class="relative mb-8">
+                        <input id="email" name="email" type="text"
+                            class="w-full h-10 text-gray-900 placeholder-transparent rounded border-b-2 border-gray-300 peer focus:outline-none focus:border-orange-500"
+                            placeholder="john@doe.com" />
+                        <label for="email"
+                            class="absolute left-0 -top-3.5 text-gray-600 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">&nbsp;&nbsp;Email
+                            address</label>
+                    </div>
+                    <div class="relative mb-4">
+                        <input id="password" name="password" type="password"
+                            class="w-full h-10 text-gray-900 placeholder-transparent rounded border-b-2 border-gray-300 peer focus:outline-none focus:border-orange-500"
+                            placeholder="john@doe.com" />
+                        <label for="Password"
+                            class="absolute left-0 -top-3.5 text-gray-600 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">
+                            &nbsp;&nbsp;Password</label>
+                    </div>
+                    <div class="relative mb-4">
+                        <input id="repeatpassword" name="repeatpassword" type="password"
+                            class="w-full h-10 text-gray-900 placeholder-transparent rounded border-b-2 border-gray-300 peer focus:outline-none focus:border-orange-500"
+                            placeholder="john@doe.com" />
+                        <label for="Repeat Password"
+                            class="absolute left-0 -top-3.5 text-gray-600 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">
+                            &nbsp;&nbsp;Repeat Password</label>
+                    </div>
+                    
+                    <div class="mt-6">
+                        <button
+                            class="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-[#C6480C] rounded-md hover:bg-orange-500 focus:outline-none focus:bg-purple-600">
+                            Register
+                        </button>
+                    </div>
+                </form>
+                        </div>
+                        </div>
+      )
+      };
+
+
 
 const RegistrationContainer = ({ checkIfLoggedIn }) => (
-  <div name="home" className="w-half h-screen bg-[#22333B] ">
-    <div className="max-w-[1000px] mx-auto px-8 flex flex-col justify-center h-full">
-      <h1 className="text-4xl sm:text-7xl font-bold text-[#ffffff]">Sign-up</h1>
-      <h2 className="text-4xl sm:text-7xl font-bold text-[#84C318]">
-        Register for a new account
-      </h2>
-      <p className="text-[#8892b0] py-4 max-w-[700px]">
-        Sign-up now for some budget-friendly tasties!
+  <div style={{ backgroundImage:`url(${registrationresized1})`,backgroundRepeat:"no-repeat",backgroundSize:"90%"}}  name="home" className="w-half h-screen bg-[#F1F1EF] ">
+    <div className="max-w-[700px] mx-left pl-20 flex flex-col justify-center h-full">
+  
+      <p className="text-2xl text-center text-[#864540] text-decoration-line: underline py-4 max-w-[700px]">
+        Create Account
       </p>
       <RegistrationForm checkIfLoggedIn={checkIfLoggedIn} />
     </div>
   </div>
+
 );
 
 export default RegistrationContainer;
