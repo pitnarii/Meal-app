@@ -9,6 +9,7 @@ import Contact from "./components/Contact";
 import Register from "./components/Register";
 import Welcome from "./components/Welcome";
 
+
 function App() {
   const [userInfo, setUserInfo] = useState(null);
 
@@ -49,6 +50,7 @@ function App() {
       <About />
       <Recipes />
       <Contact />
+
     </div>
   );
 }

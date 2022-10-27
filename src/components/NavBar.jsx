@@ -21,8 +21,7 @@ const NavBar = () => {
 
 <img src={FrugalChefResized} alt="app__logo" height='105px' width='281px' />
 
-        
-  Logo here Nicole
+      
 
 
       {/* menu */}
@@ -59,8 +58,8 @@ const NavBar = () => {
           About
         </Link></li>
         
-        <li className='py-6 text-4xl'> <Link onClick={handleClick} to="work" smooth={true} duration={500}>
-         Work
+        <li className='py-6 text-4xl'> <Link onClick={handleClick} to="login" smooth={true} duration={500}>
+         Login
         </Link> </li>
         <li className='py-6 text-4xl'> <Link onClick={handleClick} to="blog" smooth={true} duration={500}>
           Blog
