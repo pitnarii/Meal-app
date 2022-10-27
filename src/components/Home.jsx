@@ -2,7 +2,7 @@
 import frugalogo from '../assets/frugalogo.png';
 import LandingPage from '../assets/LandingPage.jpg';
 import React from 'react';
-import { HiArrowNarrowRight } from 'react-icons/hi';
+
 import {Link} from 'react-scroll'
 
  

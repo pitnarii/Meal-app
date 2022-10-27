@@ -36,6 +36,9 @@ const NavBar = () => {
         <a href='/register'>Register</a>
         </li>
         <li> 
+        <a href='/search'>Search</a>
+        </li>
+        <li> 
         <a href='/welcome'>Welcome</a>
            </li>
         <li> 
@@ -47,7 +50,6 @@ const NavBar = () => {
 
     
        
-        <button class="bg-[#E07A72] hover:bg-orange-500 text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline">Sign-up</button>
        
       
     
@@ -73,6 +75,11 @@ const NavBar = () => {
         <li className='py-6 text-4xl'>
         <a href ='/register'>Register</a>
          </li>
+
+         <li className='py-6 text-4xl'>
+        <a href ='/search'>Search</a>
+         </li>
+
         <li className='py-6 text-4xl'> 
         <a href ='/welcome'>Welcome</a>
          </li>

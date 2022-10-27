@@ -7,6 +7,7 @@ import Recipes from "./components/Recipes";
 import Contact from "./components/Contact";
 import Register from "./components/Register";
 import Welcome from "./components/Welcome";
+import Search from "./components/Search";
 
 import {Routes, Route} from 'react-router-dom'
 
@@ -45,6 +46,7 @@ function App() {
        <Route path ='/' element ={<Home/>} />
        <Route path ='/about' element ={<About/>} />
        <Route path ='/register' element ={<Register/>} />
+       <Route path ='/search' element ={<Search/>} />
        <Route path ='/welcome' element ={<Welcome/>} />
        <Route path ='/recipes' element ={<Recipes/>} />
        <Route path ='/contact' element ={<Contact/>} />
