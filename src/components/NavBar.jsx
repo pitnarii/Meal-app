@@ -7,7 +7,7 @@ import {
  
 } from 'react-icons/fa';
 
-import {Link} from 'react-scroll'
+import {Link} from 'react-router-dom'
 
 
 
@@ -25,18 +25,30 @@ const NavBar = () => {
 
 
       {/* menu */}
-
       <ul className='hidden md:flex'>
         <li> 
-        <button class="bg-white text-orange-700 py-2 px-4 rounded focus:outline-none focus:shadow-outline">Home</button>
-        <button class="bg-white text-orange-700 py-2 px-4 rounded focus:outline-none focus:shadow-outline">Search</button>
-        <button class="bg-white text-orange py-2 px-4 rounded focus:outline-none focus:shadow-outline">Recipes</button>
-        <button class="bg-white text-orange-700 py-2 px-4 rounded focus:outline-none focus:shadow-outline">Login</button>
-
-        <button class="bg-[#E07A72] hover:bg-orange-500 text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline">Sign-up</button>
+          <a href='/'>Home</a>
+          </li>
+        <li> 
+        <a href='/about'>About</a>
         </li>
-        
+        <li> 
+        <a href='/register'>Register</a>
+        </li>
+        <li> 
+        <a href='/welcome'>Welcome</a>
+           </li>
+        <li> 
+        <a href='/recipes'>Recipes</a>
+        </li>
+        <li> 
+        <a href='/contact'>Contact</a> </li>
       </ul>
+
+    
+       
+        <button class="bg-[#E07A72] hover:bg-orange-500 text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline">Sign-up</button>
+       
       
     
 
@@ -51,22 +63,25 @@ const NavBar = () => {
       {/* t operator, check value of nav */}
       <ul className={!nav ? 'hidden' : 'absolute top-0 left-0 w-full h-screen bg-[#0b090a] flex flex-col justify-center items-center'}>
 
-        <li className='py-6 text-4xl'> <Link onClick={handleClick} to="home" smooth={true} duration={500}>
-          Home
-        </Link></li>
-        <li className='py-6 text-4xl'> <Link onClick={handleClick} to="about" smooth={true} duration={500}>
-          About
-        </Link></li>
+        <li className='py-6 text-4xl'> 
+        <a href ='/'>Home</a>
+        </li>
+        <li className='py-6 text-4xl'> 
+        <a href ='/about'>About</a>
+        </li>
         
-        <li className='py-6 text-4xl'> <Link onClick={handleClick} to="login" smooth={true} duration={500}>
-         Login
-        </Link> </li>
-        <li className='py-6 text-4xl'> <Link onClick={handleClick} to="blog" smooth={true} duration={500}>
-          Blog
-        </Link> </li>
-        <li className='py-6 text-4xl'> <Link onClick={handleClick} to="contact" smooth={true} duration={500}>
-          Contact
-        </Link> </li> 
+        <li className='py-6 text-4xl'>
+        <a href ='/register'>Register</a>
+         </li>
+        <li className='py-6 text-4xl'> 
+        <a href ='/welcome'>Welcome</a>
+         </li>
+        <li className='py-6 text-4xl'> 
+        <a href ='/recipes'>Recipes</a></li> 
+
+        <li className='py-6 text-4xl'> 
+        <a href ='/contact'>Contact</a></li> 
+
       </ul>
 
       {/* social icons */}

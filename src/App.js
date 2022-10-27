@@ -3,12 +3,12 @@ import React, { useState, useEffect } from "react";
 import NavBar from "./components/NavBar";
 import Home from "./components/Home";
 import About from "./components/About";
-
 import Recipes from "./components/Recipes";
 import Contact from "./components/Contact";
 import Register from "./components/Register";
 import Welcome from "./components/Welcome";
 
+import {Routes, Route} from 'react-router-dom'
 
 function App() {
   const [userInfo, setUserInfo] = useState(null);
@@ -39,19 +39,28 @@ function App() {
   useEffect(() => setInterval(checkIfLoggedIn, 5000), []);
 
   return (
-    <div>
+    <>
       <NavBar />
+      <Routes>
+       <Route path ='/' element ={<Home/>} />
+       <Route path ='/about' element ={<About/>} />
+       <Route path ='/register' element ={<Register/>} />
+       <Route path ='/welcome' element ={<Welcome/>} />
+       <Route path ='/recipes' element ={<Recipes/>} />
+       <Route path ='/contact' element ={<Contact/>} />
+      </Routes>
+      {/* <Home /> 
+      <About />
       {userInfo?.loggedIn ? (
         <Welcome name={userInfo?.name} signOut={signOut} />
       ) : (
         <Register checkIfLoggedIn={checkIfLoggedIn} />
       )}
-      <Home />
-      <About />
+      <Welcome />
       <Recipes />
-      <Contact />
+      <Contact /> */}
 
-    </div>
+    </>
   );
 }
 
