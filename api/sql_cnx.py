@@ -2,6 +2,8 @@ import mysql.connector
 import os
 
 
+
+
 MYSQL_USER = "INSERT USER"
 MYSQL_PASSWORD = "INSERT PASSWORD"
 

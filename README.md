@@ -1,3 +1,19 @@
+# Update for Login
+
+## API for login (from melivecode)
+
+Free REST-API with fake data, Ready to be called for simulating the real-world application. Me Live Code is suitable for developers who want to quickly build and test prototypes.
+
+## sweetalert2 
+
+pop-up for login (Success fully logged-in and error)
+please install sweetalert2 library
+
+### Install sweetalert2
+
+npm install sweetalert2
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
