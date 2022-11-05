@@ -92,3 +92,8 @@
     )!important;
 }
 
+.homeimage{
+  height: fit-content;
+  width: fit-content; 
+  background-image: no-repeat;
+}

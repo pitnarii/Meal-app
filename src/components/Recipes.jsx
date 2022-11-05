@@ -1,131 +1,51 @@
 import React from 'react';
-
-import Meal1 from '../assets/meal1.jpeg';
-import Meal2 from '../assets/meal2.jpeg';
-import Meal3 from '../assets/meal3.jpeg';
-import Meal4 from '../assets/meal4.jpeg';
-import Meal5 from '../assets/meal5.jpeg';
+import RecipeDiv from './RecipeDiv';
 
 
-const Recipes = () => {
-  return (
-    <div name='recipes' className='w-full md:h-screen text-gray-300 bg-[#22333B]'>
-      <div className='max-w-[1000px] mx-auto p-4 flex flex-col justify-center w-full h-full'>
-        <div className='pb-8'>
-          <p className='text-4xl sm:text-7xl font-bold text-[#84C318]'>  Recipes  </p>
-          <p className='py-6'> Text about recipes </p>
-          <p className='py-1'> (this needs to render in seperate tab not on homepage) </p>
-        </div>
+const Recipes = (props) => {
+
+
+  function createRecipe(recipe) {
+      return (
+        <RecipeDiv
+          key={recipe.id}
+          id={recipe.id}
+          name={recipe.name}
+          image={recipe.image}
+          price={recipe.price}
+          sourceUrl={recipe.sourceUrl}
+        />
+      );
+    }
+  
+
+
+return (
+    <div name='savedrecipes' className='w-full md:h-screen text-gray-300 bg-[#FFFFFF]'>
+    <div className='max-w-[1000px] mx-auto p-4 flex flex-col justify-center w-full h-full'>
+   <br/> 
+      <br />
+      <br/> 
+      <h2 className='text-4xl sm:text-7xl font-bold text-[#E07A72]'>
+        Searched Recipes
+      </h2>
+          {/* Commenting this out not sure if a button is needed?<div class="container py-10 px-50 mx-0 min-w-full flex flex-col items-center"><h1 class="bg-[#E07A72] hover:bg-orange-500 text-white py-2 px-4 h-30 w-80 text-center font-medium text-l rounded focus:outline-none focus:shadow-outline">Recipes</h1></div>*/}
+       
+     
 
 {/* Container */}
         <div className='grid sm:grid-cols-2 md:grid-cols-3 gap-4'>
-
+       
             {/* Grid Item */}
-            <div
-            style={{ backgroundImage: `url(${Meal4})` }}
-            className='shadow-lg shadow-[#ffffff] group container rounded-md flex justify-center items-center mx-auto content-div'
-          >
-            {/* Hover Effects */}
-            <div className='opacity-0 group-hover:opacity-100'>
-              <div className='mx-14 pt-8 text-center'>
-                <a href=''>
-                <button class="text-white group border-2 px-6 py-3 my-2 flex items-center hover:bg-green-600 hover:border-green-600">  Recipe title from API</button>
-                </a>
-                <a href='/'>
-                </a>
-              </div>
-            </div>
-          </div>  
-            {/* Grid Item */}
-            <div
-            style={{ backgroundImage: `url(${Meal4})` }}
-            className='shadow-lg shadow-[#ffffff] group container rounded-md flex justify-center items-center mx-auto content-div'
-          >
-            {/* Hover Effects */}
-            <div className='opacity-0 group-hover:opacity-100'>
-              <div className='mx-14 pt-8 text-center'>
-                <a href=''>
-                <button class="text-white group border-2 px-6 py-3 my-2 flex items-center hover:bg-green-600 hover:border-green-600">  Recipe title from API</button>
-                </a>
-                <a href='/'>
-                </a>
-              </div>
-            </div>
-          </div>  
-         
-          {/* Grid Item */}
-          <div
-            style={{ backgroundImage: `url(${Meal4})` }}
-            className='shadow-lg shadow-[#ffffff] group container rounded-md flex justify-center items-center mx-auto content-div'
-          >
-            {/* Hover Effects */}
-            <div className='opacity-0 group-hover:opacity-100'>
-              <div className='mx-14 pt-8 text-center'>
-                <a href=''>
-                <button class="text-white group border-2 px-6 py-3 my-2 flex items-center hover:bg-green-600 hover:border-green-600">  Recipe title from API</button>
-                </a>
-                <a href='/'>
-                </a>
-              </div>
-            </div>
-          </div>   
-
-          {/* Grid Item */}
-          <div
-            style={{ backgroundImage: `url(${Meal4})` }}
-            className='shadow-lg shadow-[#ffffff] group container rounded-md flex justify-center items-center mx-auto content-div'
-          >
-            {/* Hover Effects */}
-            <div className='opacity-0 group-hover:opacity-100'>
-              <div className='mx-14 pt-8 text-center'>
-                <a href=''>
-                <button class="text-white group border-2 px-6 py-3 my-2 flex items-center hover:bg-green-600 hover:border-green-600">  Recipe title from API</button>
-                </a>
-                <a href='/'>
-                </a>
-              </div>
-            </div>
-          </div>  
-
-          {/* Grid Item */}
-          <div
-            style={{ backgroundImage: `url(${Meal4})` }}
-            className='shadow-lg shadow-[#ffffff] group container rounded-md flex justify-center items-center mx-auto content-div'
-          >
-            {/* Hover Effects */}
-            <div className='opacity-0 group-hover:opacity-100'>
-              <div className='mx-14 pt-8 text-center'>
-                <a href=''>
-                <button class="text-white group border-2 px-6 py-3 my-2 flex items-center hover:bg-green-600 hover:border-green-600">  Recipe title from API</button>
-                </a>
-                <a href='/'>
-                </a>
-              </div>
-            </div>
-          </div>   
-
-          {/* Grid Item */}
-          <div
-            style={{ backgroundImage: `url(${Meal4})` }}
-            className='shadow-lg shadow-[#ffffff] group container rounded-md flex justify-center items-center mx-auto content-div'
-          >
-            {/* Hover Effects */}
-            <div className='opacity-0 group-hover:opacity-100'>
-              <div className='mx-14 pt-8 text-center'>
-                <a href=''>
-                <button class="text-white group border-2 px-6 py-3 my-2 flex items-center hover:bg-green-600 hover:border-green-600">  Recipe title from API</button>
-                </a>
-                <a href='/'>
-                </a>
-              </div>
-            </div>
-          </div>  
-
-
-        </div>
-      </div>
+            {props.recipeData.map(createRecipe)}
+          </div>
     </div>
-  );
+  </div>
+);
 };
 
 export default Recipes;
+
+         
+
+

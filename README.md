@@ -68,3 +68,13 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### notes re connecting front + back end
+
+this is the generally the method that I have been using if it's useful:
+
+- sync some state in your component with your html form `<input>` by setting the 'value' of the input to your state variable + using 'onChange' to update the state variable
+- you now have variables you can use in an API request
+- use the fetch api when a button is pressed to fetch an API endpoint https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
+- use .json() on the result to get the response as a javascript object
+- do something with the results
